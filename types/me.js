@@ -11,6 +11,11 @@ module.exports = new GraphQLObjectType({
     id: { type: GraphQLID },
     email: { type: new GraphQLNonNull(GraphQLString)},
     firstName: { type: GraphQLString },
-    lastName: { type: GraphQLString }
+    lastName: { type: GraphQLString },
+    fullName: {
+      type: GraphQLString,
+      resolve: objj => `${obj.firstName} ${obj.lastName}`
+    },
+    createdAt: { type: GraphQLString }
   }
 });
