@@ -9,6 +9,8 @@ module.exports = new GraphQLObjectType({
   name: 'MeType',
   fields: {
     id: { type: GraphQLID },
-    email: { type: new GraphQLNonNull(GraphQLString)}
+    email: { type: new GraphQLNonNull(GraphQLString)},
+    firstName: { type: GraphQLString },
+    lastName: { type: GraphQLString }
   }
 });
