@@ -2,7 +2,7 @@ const {
   GraphQLObjectType,
   GraphQLID,
   GraphQLNonNull,
-  GraphQLString
+  GraphQLString,
 } = require('graphql');
 
 const ContestStatusType = require('./contest-status');
@@ -16,6 +16,6 @@ module.exports = new GraphQLObjectType({
     title: { type: new GraphQLNonNull(GraphQLString) },
     description: { type: GraphQLString },
     status: { type: GraphQLNonNull(ContestStatusType) },
-    createdAt: { type: new GraphQLNonNull(GraphQLString) }
-  }
+    createdAt: { type: new GraphQLNonNull(GraphQLString) },
+  },
 });

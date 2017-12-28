@@ -2,7 +2,7 @@ const {
   GraphQLSchema,
   GraphQLObjectType,
   GraphQLString,
-  GraphQLNonNull
+  GraphQLNonNull,
 } = require('graphql');
 const pgdb = require('../database/pgdb');
 
@@ -17,18 +17,18 @@ const RootQueryType = new GraphQLObjectType({
       description: 'The current user identified by an API key.',
       args: {
         key: {
-          type: new GraphQLNonNull(GraphQLString)
-        }
+          type: new GraphQLNonNull(GraphQLString),
+        },
       },
       resolve: (obj, args, { pgPool }) => {
         return pgdb(pgPool).getUser(args.key);
-      }
-    }
-  }
+      },
+    },
+  },
 });
 
 const ncSchema = new GraphQLSchema({
-  query: RootQueryType
+  query: RootQueryType,
 });
 
 module.exports = ncSchema;

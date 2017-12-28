@@ -1,7 +1,6 @@
 {
-    "extends": "standard",
+    "extends": "airbnb",
     "rules": {
-        "semi": "warn",
-        "space-before-function-paren": "off"
+        "arrow-body-style": "off"
     }
 }

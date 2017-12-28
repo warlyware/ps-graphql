@@ -1,5 +1,5 @@
 const {
-  GraphQLEnumType
+  GraphQLEnumType,
 } = require('graphql');
 
 module.exports = new GraphQLEnumType({
@@ -8,6 +8,6 @@ module.exports = new GraphQLEnumType({
   values: {
     DRAFT: { value: 'draft' },
     PUBLISHED: { value: 'published' },
-    ARCHIVED: { value: 'archived' }
-  }
-})
+    ARCHIVED: { value: 'archived' },
+  },
+});
